@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Puanga</title>
+  <link rel="manifest" href="./manifest.json" />
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 480px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: Canvas;
+      color: CanvasText;
+    }
+    label { display: block; margin-top: 1rem; font-size: 0.85rem; opacity: 0.7; }
+    input, select {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      box-sizing: border-box;
+      background: Field;
+      color: FieldText;
+      border: 1px solid GrayText;
+    }
+    #client-display { opacity: 0.8; }
+    button { margin-top: 1rem; padding: 0.6rem 1.2rem; font-size: 1rem; }
+    #running { margin-top: 1.5rem; font-weight: bold; }
+    #status { margin-top: 0.5rem; opacity: 0.6; font-size: 0.85rem; }
+    details { margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>Puanga</h1>
+
+  <label for="project-id">Project / Course</label>
+  <select id="project-id">
+    <option value="">Loading…</option>
+  </select>
+
+  <label>Client / Provider</label>
+  <div id="client-display">—</div>
+
+  <label for="task">Task</label>
+  <input id="task" type="text" placeholder="what are you doing" />
+
+  <button id="start-btn">Start</button>
+  <button id="stop-btn" disabled>Stop</button>
+
+  <div id="running">Nothing running</div>
+  <div id="status"></div>
+
+  <details>
+    <summary>Settings</summary>
+    <label for="service-url">Local service URL</label>
+    <input id="service-url" type="text" placeholder="https://puanga.local:8420" />
+  </details>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
